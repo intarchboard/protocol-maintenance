@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head profile="http://www.w3.org/2006/03/hcard http://dublincore.org/documents/2008/08/04/dc-html/">
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+
+  <title>The Harmful Consequences of the Robustness Principle</title>
+
+  
+<style type="text/css">/*<![CDATA[*/
+
+body {
+  font: 16px "Helvetica Neue","Open Sans",Helvetica,Calibri,sans-serif;
+  color: #333;
+  font-size-adjust: 0.5;
+  line-height: 24px;
+  margin: 75px auto;
+  max-width: 624px;
+  padding: 0 5px;
+}
+
+.title, .filename, h1, h2, h3, h4, h5 {
+  font: 16px "Roboto Condensed","Helvetica Neue","Open Sans",Helvetica,Calibri,sans-serif;
+  font-size-adjust: 0.5;
+  font-weight: bold;
+  color: #333;
+  line-height: 100%;
+  margin: 1.2em 0 0.3em;
+}
+.title, #rfc\.title h1 { font-size: 32px; }
+h1, section h1, h2, section h2, section h3, nav h2 { font-size: 20px; }
+h3, section h4, h4, section h5 { font-size: 16px; }
+h1 a[href], h2 a[href], h3 a[href], h4 a[href] {
+  color: #333;
+}
+
+table {
+  margin-left: 0em;
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+td {
+  border-top: 1px solid #ddd;
+  vertical-align: top;
+}
+tr:nth-child(2n+1) > td,
+tr:nth-child(2n+1) > th {
+  background-color: #f9f9f9;
+}
+td.reference {
+  max-width: 200px;
+  border-top: none;
+  padding-right: 1em;
+}
+.right {
+  text-align: right;
+}
+
+
+table.header, table#rfc\.headerblock {
+  width: 100%;
+}
+table.header td, table#rfc\.headerblock td {
+  border: none;
+  background-color: transparent;
+  color: black;
+  padding: 0;
+}
+.filename {
+  display: block;
+  color: rgb(119, 119, 119);
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 100%;
+  margin: 10px 0 32px;
+}
+#rfc\.abstract+p, #rfc\.abstract+p code, #rfc\.abstract+p samp, #rfc\.abstract+p tt {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+samp, tt, code, pre, span.tt {
+  font-size: 13.5px;
+  font-family: Consolas, monospace;
+  font-size-adjust: none;
+}
+pre {
+  background-color: #eee;
+  border: 1px solid #ddd;
+  overflow-x: auto;
+  padding: 5px;
+  margin: 5px;
+}
+.figure, caption {
+  font-style: italic;
+  margin: 0 1.5em;
+  text-align: left;
+}
+
+address {
+  margin: 16px 2px;
+  line-height: 20px;
+}
+.vcard {
+  font-style: normal;
+}
+.vcardline {
+  display: block;
+}
+.vcardline .fn, address b {
+  font-weight: normal;
+}
+.vcardline .hidden {
+  display: none;
+}
+
+dl {
+  margin-left: 1em;
+}
+dl.dl-horizontal: {
+  margin-left: 0;
+}
+dl > dt {
+  float: left;
+  margin-right: 1em;
+}
+dl.nohang > dt {
+  float: none;
+}
+dl > dd {
+  margin-bottom: .5em;
+}
+dl.compact > dd {
+  margin-bottom: 0em;
+}
+dl > dd > dl {
+  margin-top: 0.5em;
+  margin-bottom: 0em;
+}
+ul.empty {
+  list-style-type: none;
+}
+ul.empty li {
+  margin-top: .5em;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+}
+hr.noprint {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+a[href] {
+  color: #2a6496;
+}
+a[href]:hover {
+  background-color: #eee;
+}
+
+p, ol, ul, li {
+  padding: 0;
+}
+p {
+  margin: 0.5em 0;
+}
+ol, ul {
+  margin: 0.2em 0 0.2em 2em;
+}
+li {
+  margin: 0.2em 0;
+}
+address {
+  font-style: normal;
+}
+
+ul.toc ul {
+  margin: 0 0 0 2em;
+}
+ul.toc li {
+  list-style: none;
+  margin: 0;
+}
+
+@media screen and (min-width: 924px) {
+  body {
+    padding-right: 350px;
+  }
+  body>ul.toc, body>#rfc\.toc {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    right: calc(50vw - 500px);
+    width: 300px;
+    z-index: 1;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+  body>#rfc\.toc {
+    top: 55px;
+  }
+  body>ul.toc {
+    top: 100px;
+  }
+
+  ul.toc {
+    margin: 0 0 0 4px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  ul.toc ul {
+    margin-left: 1.2em;
+  }
+}
+
+.github-fork-ribbon-wrapper {
+  display: none;
+}
+@media screen and (min-width: 800px) {
+  /* "Fork me on GitHub" CSS ribbon based on
+   * https://github.com/simonwhitaker/github-fork-ribbon-css
+   */
+  .github-fork-ribbon {
+    position: absolute;
+    padding: 2px 0;
+    background-color: #a00;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+    font: 700 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    pointer-events: auto;
+
+    top: 38px;
+    right: -45px;
+
+    transform: rotate(45deg);
+  }
+
+  .github-fork-ribbon a[href],
+  .github-fork-ribbon a[href]:hover {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+    text-align: center;
+
+    width: 190px;
+    line-height: 18px;
+
+    display: inline-block;
+    padding: 2px 0;
+
+    border: 1.5px dotted #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .github-fork-ribbon-wrapper {
+    display: block;
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    overflow: hidden;
+    top: 0; right: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .github-fork-ribbon-wrapper {
+    position: fixed;
+  }
+  /*]]>*/</style>
+  <meta name="viewport" content="initial-scale=1.0">
+
+
+  <link href="#rfc.toc" rel="Contents">
+<link href="#rfc.section.1" rel="Chapter" title="1 Introduction">
+<link href="#rfc.section.2" rel="Chapter" title="2 Fallibility of Specifications">
+<link href="#rfc.section.3" rel="Chapter" title="3 Protocol Decay">
+<link href="#rfc.section.4" rel="Chapter" title="4 Ecosystem Effects">
+<link href="#rfc.section.5" rel="Chapter" title="5 Active Protocol Maintenance">
+<link href="#rfc.section.6" rel="Chapter" title="6 Extensibility">
+<link href="#rfc.section.7" rel="Chapter" title="7 Virtuous Intolerance">
+<link href="#rfc.section.8" rel="Chapter" title="8 Exclusion">
+<link href="#rfc.section.9" rel="Chapter" title="9 Security Considerations">
+<link href="#rfc.section.10" rel="Chapter" title="10 IANA Considerations">
+<link href="#rfc.references" rel="Chapter" title="11 Informative References">
+<link href="#rfc.appendix.A" rel="Chapter" title="A Acknowledgments">
+<link href="#rfc.authors" rel="Chapter">
+
+
+  <meta name="generator" content="xml2rfc version 2.24.0 - https://tools.ietf.org/tools/xml2rfc" />
+  <link rel="schema.dct" href="http://purl.org/dc/terms/" />
+
+  <meta name="dct.creator" content="Thomson, M." />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-iab-protocol-maintenance-latest" />
+  <meta name="dct.issued" scheme="ISO8601" content="2019-11-05" />
+  <meta name="dct.abstract" content="The robustness principle, often phrased as &#8220;be conservative in what you send, and liberal in what you accept&#8221;, has long guided the design and implementation of Internet protocols.  The posture this statement advocates promotes interoperability in the short term, but can negatively affect the protocol ecosystem over time.  For a protocol that is actively maintained, the robustness principle can, and should, be avoided." />
+  <meta name="description" content="The robustness principle, often phrased as &#8220;be conservative in what you send, and liberal in what you accept&#8221;, has long guided the design and implementation of Internet protocols.  The posture this statement advocates promotes interoperability in the short term, but can negatively affect the protocol ecosystem over time.  For a protocol that is actively maintained, the robustness principle can, and should, be avoided." />
+
+</head>
+
+<body>
+
+  <table class="header">
+    <tbody>
+    
+    	<tr>
+<td class="left">Network Working Group</td>
+<td class="right">M. Thomson</td>
+</tr>
+<tr>
+<td class="left">Internet-Draft</td>
+<td class="right">Mozilla</td>
+</tr>
+<tr>
+<td class="left">Intended status: Informational</td>
+<td class="right">November 05, 2019</td>
+</tr>
+<tr>
+<td class="left">Expires: May 8, 2020</td>
+<td class="right"></td>
+</tr>
+
+    	
+    </tbody>
+  </table>
+
+  <p class="title">The Harmful Consequences of the Robustness Principle<br />
+  <span class="filename">draft-iab-protocol-maintenance-latest</span></p>
+  
+  <h1 id="rfc.abstract"><a href="#rfc.abstract">Abstract</a></h1>
+<p>The robustness principle, often phrased as &#8220;be conservative in what you send, and liberal in what you accept&#8221;, has long guided the design and implementation of Internet protocols.  The posture this statement advocates promotes interoperability in the short term, but can negatively affect the protocol ecosystem over time.  For a protocol that is actively maintained, the robustness principle can, and should, be avoided.</p>
+<h1><a>Note to Readers</a></h1>
+<p>Discussion of this document takes place on the Architecture-Discuss mailing list (architecture-discuss@ietf.org), which is archived at <a href="https://mailarchive.ietf.org/arch/browse/architecture-discuss/">https://mailarchive.ietf.org/arch/browse/architecture-discuss/</a>.</p>
+<p>Source for this draft and an issue tracker can be found at <a href="https://github.com/intarchboard/protocol-maintenance">https://github.com/intarchboard/protocol-maintenance</a>.</p>
+<h1 id="rfc.status"><a href="#rfc.status">Status of This Memo</a></h1>
+<p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
+<p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
+<p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
+<p>This Internet-Draft will expire on May 8, 2020.</p>
+<h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
+<p>Copyright (c) 2019 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
+
+  
+  <hr class="noprint" />
+  <h1 class="np" id="rfc.toc"><a href="#rfc.toc">Table of Contents</a></h1>
+  <ul class="toc">
+
+  	<li>1.   <a href="#rfc.section.1">Introduction</a>
+</li>
+<li>2.   <a href="#rfc.section.2">Fallibility of Specifications</a>
+</li>
+<li>3.   <a href="#rfc.section.3">Protocol Decay</a>
+</li>
+<li>4.   <a href="#rfc.section.4">Ecosystem Effects</a>
+</li>
+<li>5.   <a href="#rfc.section.5">Active Protocol Maintenance</a>
+</li>
+<li>6.   <a href="#rfc.section.6">Extensibility</a>
+</li>
+<li>7.   <a href="#rfc.section.7">Virtuous Intolerance</a>
+</li>
+<li>8.   <a href="#rfc.section.8">Exclusion</a>
+</li>
+<li>9.   <a href="#rfc.section.9">Security Considerations</a>
+</li>
+<li>10.   <a href="#rfc.section.10">IANA Considerations</a>
+</li>
+<li>11.   <a href="#rfc.references">Informative References</a>
+</li>
+<li>Appendix A.   <a href="#rfc.appendix.A">Acknowledgments</a>
+</li>
+<li><a href="#rfc.authors">Author's Address</a>
+</li>
+
+
+  </ul>
+
+  <h1 id="rfc.section.1">
+<a href="#rfc.section.1">1.</a> <a href="#introduction" id="introduction">Introduction</a>
+</h1>
+<p id="rfc.section.1.p.1">The robustness principle has been hugely influential in shaping the design of the Internet.  As stated in IAB RFC 1958 <a href="#PRINCIPLES" class="xref">[PRINCIPLES]</a>, the robustness principle advises to:</p>
+<p></p>
+
+<ul class="empty"><li>Be strict when sending and tolerant when receiving.  Implementations must follow specifications precisely when sending to the network, and tolerate faulty input from the network.  When in doubt, discard faulty input silently, without returning an error message unless this is required by the specification.</li></ul>
+<p id="rfc.section.1.p.3">This simple statement captures a significant concept in the design of interoperable systems.  Many consider the application of the robustness principle to be instrumental in the success of the Internet as well as the design of interoperable protocols in general.</p>
+<p id="rfc.section.1.p.4">Time and experience shows that negative consequences to interoperability accumulate over time if implementations apply the robustness principle.  This problem originates from an assumption implicit in the principle that it is not possible to affect change in a system the size of the Internet.  That is, the idea that once a protocol specification is published, changes that might require existing implementations to change are not feasible.</p>
+<p id="rfc.section.1.p.5">Many problems that might lead to applications of the robustness principle are avoided for protocols under active maintenance.  Active protocol maintenance is where a community of protocol designers, implementers, and deployers work together to continuously improve and evolve protocol specifications alongside implementations and deployments of those protocols.  A community that takes an active role in the maintenance of protocols can greatly reduce and even eliminate opportunities to apply the robustness principle.</p>
+<p id="rfc.section.1.p.6">There is good evidence to suggest that many important protocols are routinely maintained beyond their inception.  In particular, a sizeable proportion of IETF activity is dedicated to the stewardship of existing protocols.  This document serves primarily as a record of the hazards inherent in applying the robustness principle and to offer an alternative strategy for handling interoperability problems in deployments.</p>
+<p id="rfc.section.1.p.7">Ideally, protocol implementations never have to apply the robustness principle.  Or, where it is unavoidable, use of the robustness principle is viewed as a short term workaround that needs to be quickly reverted.</p>
+<h1 id="rfc.section.2">
+<a href="#rfc.section.2">2.</a> <a href="#fallibility-of-specifications" id="fallibility-of-specifications">Fallibility of Specifications</a>
+</h1>
+<p id="rfc.section.2.p.1">The context from which the robustness principle was developed provides valuable insights into its intent and purpose.  The earliest form of the principle in the RFC series (in RFC 760 <a href="#IP" class="xref">[IP]</a>) is preceded by a sentence that reveals the motivation for the principle:</p>
+<p></p>
+
+<ul class="empty"><li>While the goal of this specification is to be explicit about the protocol there is the possibility of differing interpretations.  In general, an implementation should be conservative in its sending behavior, and liberal in its receiving behavior.</li></ul>
+<p id="rfc.section.2.p.3">This formulation of the principle expressly recognizes the possibility that the specification could be imperfect.  This contextualizes the principle in an important way.</p>
+<p id="rfc.section.2.p.4">An imperfect specification is natural, largely because it is more important to proceed to implementation and deployment than it is to perfect a specification.  A protocol, like any complex system, benefits greatly from experience with its use.  A deployed protocol is immeasurably more useful than a perfect protocol.  The robustness principle is a tool that is suited to early phases of system design.</p>
+<p id="rfc.section.2.p.5">As <a href="#SUCCESS" class="xref">[SUCCESS]</a> demonstrates, success or failure of a protocol depends far more on factors like usefulness than on on technical excellence.  Timely publication of protocol specifications, even with the potential for flaws, likely contributed significantly to the eventual success of the Internet.</p>
+<p id="rfc.section.2.p.6">The problem is therefore not with the premise, but with its conclusion: the robustness principle itself.</p>
+<h1 id="rfc.section.3">
+<a href="#rfc.section.3">3.</a> <a href="#protocol-decay" id="protocol-decay">Protocol Decay</a>
+</h1>
+<p id="rfc.section.3.p.1">The application of the robustness principle to the early Internet, or any system that is in early phases of deployment, is expedient.  The consequence of applying the principle is deferring the effort of dealing with interoperability problems, which can amplify the ultimate cost of handling those problems.</p>
+<p id="rfc.section.3.p.2">Divergent implementations of a specification emerge over time.  When variations occur in the interpretation or expression of semantic components, implementations cease to be perfectly interoperable.</p>
+<p id="rfc.section.3.p.3">Implementation bugs are often identified as the cause of variation, though it is often a combination of factors.  Application of a protocol to uses that were not anticipated in the original design, or ambiguities and errors in the specification are often confounding factors.  Disagreements on the interpretation of specifications should be expected over the lifetime of a protocol.</p>
+<p id="rfc.section.3.p.4">Even with the best intentions, the pressure to interoperate can be significant.  No implementation can hope to avoid having to trade correctness for interoperability indefinitely.</p>
+<p id="rfc.section.3.p.5">An implementation that reacts to variations in the manner recommended in the robustness principle sets up a feedback cycle.  Over time:</p>
+<p></p>
+
+<ul>
+<li>Implementations progressively add logic to constrain how data is transmitted, or to permit variations in what is received.</li>
+<li>Errors in implementations or confusion about semantics are permitted or ignored.</li>
+<li>These errors can become entrenched, forcing other implementations to be tolerant of those errors.</li>
+</ul>
+<p id="rfc.section.3.p.7">A flaw can become entrenched as a de facto standard.  Any implementation of the protocol is required to replicate the aberrant behavior, or it is not interoperable.  This is both a consequence of applying the robustness principle, and a product of a natural reluctance to avoid fatal error conditions.  Ensuring interoperability in this environment is often referred to as aiming to be &#8220;bug for bug compatible&#8221;.</p>
+<p id="rfc.section.3.p.8">For example, in TLS <a href="#TLS" class="xref">[TLS]</a> extensions use a tag-length-value format, and they can be added to messages in any order.  However, some server implementations terminate connections if they encounter a TLS ClientHello message that ends with an empty extension.  To maintain interoperability, client implementations are required to be aware of this bug and ensure that a ClientHello message ends in a non-empty extension.</p>
+<p id="rfc.section.3.p.9">The original JSON specification <a href="#JSON" class="xref">[JSON]</a> demonstrates the effect of specification shortcomings.  RFC 4627 omitted critical details on a range of key details including Unicode handling, ordering and duplication of object members, and number encoding.  Consequently, a range of interpretations were used by implementations.  An updated specification <a href="#JSON-BIS" class="xref">[JSON-BIS]</a> did not correct these errors, concentrating instead on identifying the interoperable subset of JSON.  I-JSON <a href="#I-JSON" class="xref">[I-JSON]</a> takes that subset and defines a new format that prohibits the problematic parts of JSON.  Of course, that means that I-JSON is not fully interoperable with JSON.  Consequently, I-JSON is not widely implemented in parsers.  Many JSON parsers now implement the more precise algorithm specified in <a href="#ECMA262" class="xref">[ECMA262]</a>.</p>
+<p id="rfc.section.3.p.10">The robustness principle therefore encourages a reaction that can create interoperability problems.  In particular, the application of the robustness principle is particularly deleterious for early implementations of new protocols as quirks in early implementations can affect all subsequent deployments.</p>
+<h1 id="rfc.section.4">
+<a href="#rfc.section.4">4.</a> <a href="#ecosystem-effects" id="ecosystem-effects">Ecosystem Effects</a>
+</h1>
+<p id="rfc.section.4.p.1">Once deviations become entrenched, it can be extremely difficult - if not impossible - to rectify the situation.</p>
+<p id="rfc.section.4.p.2">Interoperability requirements for protocol implementations are set by other deployments.  Specifications and - where they exist - conformance test suites might guide the initial development of implementations, but implementations ultimately need to interoperate with deployed implementations.</p>
+<p id="rfc.section.4.p.3">For widely used protocols, the massive scale of the Internet makes large-scale interoperability testing infeasible for all but a privileged few.  The cost of building a new implementation using reverse engineering increases as the number of implementations and bugs increases.  Worse, the set of tweaks necessary for wide interoperability can be difficult to discover.</p>
+<p id="rfc.section.4.p.4">Consequently, new implementations might be forced into niche uses, where the problems arising from interoperability issues can be more closely managed.  However, restricting new implementations into limited deployments risks causing forks in the protocol.  If implementations do not interoperate, little prevents those implementations from diverging more over time.</p>
+<p id="rfc.section.4.p.5">This has a negative impact on the ecosystem of a protocol.  New implementations are important in ensuring the continued viability of a protocol.  New protocol implementations are also more likely to be developed for new and diverse use cases and often are the origin of features and capabilities that can be of benefit to existing users.</p>
+<p id="rfc.section.4.p.6">The need to work around interoperability problems also reduces the ability of established implementations to change.  An accumulation of mitigations for interoperability issues makes implementations more difficult to maintain and can constrain extensibility (see also <a href="#USE-IT" class="xref">[USE-IT]</a>).</p>
+<p id="rfc.section.4.p.7">Sometimes what appear to be interoperability problems are symptomatic of issues in protocol design.  A community that is willing to make changes to the protocol, by revising or extending it, makes the protocol better in the process.  Applying the robustness principle instead conceals problems, making it harder, or even impossible, to fix them later.</p>
+<h1 id="rfc.section.5">
+<a href="#rfc.section.5">5.</a> <a href="#active-protocol-maintenance" id="active-protocol-maintenance">Active Protocol Maintenance</a>
+</h1>
+<p id="rfc.section.5.p.1">The robustness principle can be highly effective in safeguarding against flaws in the implementation of a protocol by peers.  Especially when a specification remains unchanged for an extended period of time, the inclination to be tolerant accumulates over time.  Indeed, when faced with divergent interpretations of an immutable specification, the best way for an implementation to remain interoperable is to be tolerant of differences in interpretation and implementation errors.</p>
+<p id="rfc.section.5.p.2">From this perspective, application of the robustness principle to the implementation of a protocol specification that does not change is logical, even necessary.  But that suggests that the problem is with the assumption that existing specifications and implementations are unable to change.  Applying the robustness principle in this way disproportionately values short-term gains over the negative effects on future implementations and the protocol as a whole.</p>
+<p id="rfc.section.5.p.3">For a protocol to have sustained viability, it is necessary for both specifications and implementations to be responsive to changes, in addition to handling new and old problems that might arise over time.</p>
+<p id="rfc.section.5.p.4">Maintaining specifications so that they closely match deployments ensures that implementations are consistently interoperable and removes needless barriers for new implementations.  Maintenance also enables continued improvement of the protocol.  New use cases are an indicator that the protocol could be successful <a href="#SUCCESS" class="xref">[SUCCESS]</a>.</p>
+<p id="rfc.section.5.p.5">Protocol designers are strongly encouraged to continue to maintain and evolve protocol specificationss beyond their initial inception and definition.  This might require the development of revised specifications, extensions, or other supporting material that documents the current state of the protocol.  Involvement of those who implement and deploy the protocol is a critical part of this process, as they provide input on their experience with how the protocol is used.</p>
+<p id="rfc.section.5.p.6">Most interoperability problems do not require revision of protocols or protocol specifications.  For instance, the most effective means of dealing with a defective implementation in a peer could be to email the developer responsible.  It is far more efficient in the long term to fix one isolated bug than it is to deal with the consequences of workarounds.</p>
+<p id="rfc.section.5.p.7">Early implementations of protocols have a stronger obligation to closely follow specifications as their behavior will affect all subsequent implementations.  Protocol specifications might need more frequent revision during early deployments to capture feedback from early rounds of deployment.</p>
+<p id="rfc.section.5.p.8">Neglect can quickly produce the negative consequences this document describes.  Restoring the protocol to a state where it can be maintained involves first discovering the properties of the protocol as it is deployed, rather than the protocol as it was originally documented.  This can be difficult and time-consuming, particularly if the protocol has a diverse set of implementations.  Such a process was undertaken for HTTP <a href="#HTTP" class="xref">[HTTP]</a> after a period of minimal maintenance.  Restoring HTTP specifications to currency took significant effort.</p>
+<p id="rfc.section.5.p.9">Maintenance is most effective if it is responsive, which is greatly affected by how rapidly protocol changes can be deployed.  For protocol deployments that operate on longer time scales, temporary workarounds following the spirit of the robustness principle might be necessary.  If specifications can be updated more readily than deployments, details of the workaround can be document, including the desired form of the protocols once the need for workarounds no longer exists and plans for removing the workaround.</p>
+<h1 id="rfc.section.6">
+<a href="#rfc.section.6">6.</a> <a href="#extensibility" id="extensibility">Extensibility</a>
+</h1>
+<p id="rfc.section.6.p.1">Good extensibility <a href="#EXT" class="xref">[EXT]</a> can make it easier to respond to new use cases or changes in the environment in which the protocol is deployed.</p>
+<p id="rfc.section.6.p.2">Extensibility is sometimes mistaken for an application of the robustness principle.  After all, if one party wants to start using a new feature before another party is prepared to receive it, it might be assumed that the receiving party is being tolerant of unexpected inputs.</p>
+<p id="rfc.section.6.p.3">A well-designed extensibility mechanism establishes clear rules for the handling of things like new messages or parameters.  If an extension mechanism is designed and implemented correctly, new protocol features can be deployed with confidence in the understanding of the effect they have on existing implementations.</p>
+<p id="rfc.section.6.p.4">In contrast, relying on implementations to consistently apply the robustness principle is not a good strategy for extensibility.  Using undocumented or accidental features of a protocol as the basis of an extensibility mechanism can be extremely difficult, as is demonstrated by the case study in Appendix A.3 of <a href="#EXT" class="xref">[EXT]</a>.</p>
+<p id="rfc.section.6.p.5">A protocol could be designed to permit a narrow set of valid inputs, or it could allow a wide range of inputs as a core feature (see for example <a href="#HTML" class="xref">[HTML]</a>).  Specifying and implementing a more flexible protocol is more difficult; allowing less variability is preferable in the absence of strong reasons to be flexible.</p>
+<h1 id="rfc.section.7">
+<a href="#rfc.section.7">7.</a> <a href="#intolerance" id="intolerance">Virtuous Intolerance</a>
+</h1>
+<p id="rfc.section.7.p.1">A well-specified protocol includes rules for consistent handling of aberrant conditions.  This increases the chances that implementations will have interoperable handling of unusual conditions.</p>
+<p id="rfc.section.7.p.2">Intolerance of any deviation from specification, where implementations generate fatal errors in response to observing undefined or unusual behaviour, can be harnessed to reduce occurrences of aberrant implementations.  Choosing to generate fatal errors for unspecified conditions instead of attempting error recovery can ensure that faults receive attention.</p>
+<p id="rfc.section.7.p.3">This improves feedback for new implementations in particular.  When a new implementation encounters an intolerant implementation, it receives strong feedback that allows problems to be discovered quickly.</p>
+<p id="rfc.section.7.p.4">To be effective, intolerant implementations need to be sufficiently widely deployed that they are encountered by new implementations with high probability.  This could depend on multiple implementations deploying strict checks.</p>
+<p id="rfc.section.7.p.5">Any intolerance also needs to be strongly supported by specifications, otherwise they encourage fracturing of the protocol community or proliferation of workarounds (see <a href="#exclusion" class="xref">Section 8</a>).</p>
+<p id="rfc.section.7.p.6">Intolerance can be used to motivate compliance with any protocol requirement.  For instance, the INADEQUATE_SECURITY error code and associated requirements in HTTP/2 <a href="#HTTP2" class="xref">[HTTP2]</a> resulted in improvements in the security of the deployed base.</p>
+<h1 id="rfc.section.8">
+<a href="#rfc.section.8">8.</a> <a href="#exclusion" id="exclusion">Exclusion</a>
+</h1>
+<p id="rfc.section.8.p.1">Any protocol participant that is affected by changes arising from maintenance might be excluded if they are unwilling or unable to implement or deploy changes that are made to the protocol.</p>
+<p id="rfc.section.8.p.2">Deliberate exclusion of problematic implementations is an important tool that can ensure that the interoperability of a protocol remains viable.  While compatible changes are always preferable to incompatible ones, it is not always possible to produce a design that protects the ability of all current and future protocol participants to interoperate.  Developing and deploying changes that risk exclusion of previously interoperating implementations requires some care, but changes to a protocol should not be blocked on the grounds of the risk of exclusion alone.</p>
+<p id="rfc.section.8.p.3">Exclusion is a direct goal when choosing to be intolerant of errors (see <a href="#intolerance" class="xref">Section 7</a>), which is deployed with the intent of protecting future interoperability.</p>
+<p id="rfc.section.8.p.4">Excluding implementations or deployments can lead to a fracturing of the protocol system that could be more harmful than any divergence resulting from following the robustness principle.  RFC 5704 <a href="#UNCOORDINATED" class="xref">[UNCOORDINATED]</a> describes how conflict or competition in the maintenance of protocols can lead to similar problems.</p>
+<h1 id="rfc.section.9">
+<a href="#rfc.section.9">9.</a> <a href="#security-considerations" id="security-considerations">Security Considerations</a>
+</h1>
+<p id="rfc.section.9.p.1">Sloppy implementations, lax interpretations of specifications, and uncoordinated extrapolation of requirements to cover gaps in specification can result in security problems.  Hiding the consequences of protocol variations encourages the hiding of issues, which can conceal bugs and make them difficult to discover.</p>
+<p id="rfc.section.9.p.2">The consequences of the problems described in this document are especially acute for any protocol where security depends on agreement about semantics of protocol elements.  For instance, use of unsafe security mechanisms, such as weak primitives <a href="#MD5" class="xref">[MD5]</a> or obsolete mechanisms <a href="#SSL3" class="xref">[SSL3]</a>, are good examples of where forcing exclusion (<a href="#exclusion" class="xref">Section 8</a>) can be desirable.</p>
+<h1 id="rfc.section.10">
+<a href="#rfc.section.10">10.</a> <a href="#iana-considerations" id="iana-considerations">IANA Considerations</a>
+</h1>
+<p id="rfc.section.10.p.1">This document has no IANA actions.</p>
+<h1 id="rfc.references">
+<a href="#rfc.references">11.</a> Informative References</h1>
+<table><tbody>
+<tr>
+<td class="reference"><b id="ECMA262">[ECMA262]</b></td>
+<td class="top">"<a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMAScript(R) 2018 Language Specification</a>", ECMA-262 9th Edition, June 2018.</td>
+</tr>
+<tr>
+<td class="reference"><b id="EXT">[EXT]</b></td>
+<td class="top">
+<a>Carpenter, B.</a>, <a>Aboba, B.</a> and <a>S. Cheshire</a>, "<a href="https://tools.ietf.org/html/rfc6709">Design Considerations for Protocol Extensions</a>", RFC 6709, DOI 10.17487/RFC6709, September 2012.</td>
+</tr>
+<tr>
+<td class="reference"><b id="HTML">[HTML]</b></td>
+<td class="top">"<a href="https://html.spec.whatwg.org/">HTML</a>", WHATWG Living Standard, March 2019.</td>
+</tr>
+<tr>
+<td class="reference"><b id="HTTP">[HTTP]</b></td>
+<td class="top">
+<a>Fielding, R.</a> and <a>J. Reschke</a>, "<a href="https://tools.ietf.org/html/rfc7230">Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing</a>", RFC 7230, DOI 10.17487/RFC7230, June 2014.</td>
+</tr>
+<tr>
+<td class="reference"><b id="HTTP2">[HTTP2]</b></td>
+<td class="top">
+<a>Belshe, M.</a>, <a>Peon, R.</a> and <a>M. Thomson</a>, "<a href="https://tools.ietf.org/html/rfc7540">Hypertext Transfer Protocol Version 2 (HTTP/2)</a>", RFC 7540, DOI 10.17487/RFC7540, May 2015.</td>
+</tr>
+<tr>
+<td class="reference"><b id="I-JSON">[I-JSON]</b></td>
+<td class="top">
+<a>Bray, T.</a>, "<a href="https://tools.ietf.org/html/rfc7493">The I-JSON Message Format</a>", RFC 7493, DOI 10.17487/RFC7493, March 2015.</td>
+</tr>
+<tr>
+<td class="reference"><b id="IP">[IP]</b></td>
+<td class="top">
+<a>Postel, J.</a>, "<a href="https://tools.ietf.org/html/rfc760">DoD standard Internet Protocol</a>", RFC 760, DOI 10.17487/RFC0760, January 1980.</td>
+</tr>
+<tr>
+<td class="reference"><b id="JSON">[JSON]</b></td>
+<td class="top">
+<a>Crockford, D.</a>, "<a href="https://tools.ietf.org/html/rfc4627">The application/json Media Type for JavaScript Object Notation (JSON)</a>", RFC 4627, DOI 10.17487/RFC4627, July 2006.</td>
+</tr>
+<tr>
+<td class="reference"><b id="JSON-BIS">[JSON-BIS]</b></td>
+<td class="top">
+<a>Bray, T.</a>, "<a href="https://tools.ietf.org/html/rfc7159">The JavaScript Object Notation (JSON) Data Interchange Format</a>", RFC 7159, DOI 10.17487/RFC7159, March 2014.</td>
+</tr>
+<tr>
+<td class="reference"><b id="MD5">[MD5]</b></td>
+<td class="top">
+<a>Turner, S.</a> and <a>L. Chen</a>, "<a href="https://tools.ietf.org/html/rfc6151">Updated Security Considerations for the MD5 Message-Digest and the HMAC-MD5 Algorithms</a>", RFC 6151, DOI 10.17487/RFC6151, March 2011.</td>
+</tr>
+<tr>
+<td class="reference"><b id="PRINCIPLES">[PRINCIPLES]</b></td>
+<td class="top">
+<a>Carpenter, B.</a>, "<a href="https://tools.ietf.org/html/rfc1958">Architectural Principles of the Internet</a>", RFC 1958, DOI 10.17487/RFC1958, June 1996.</td>
+</tr>
+<tr>
+<td class="reference"><b id="SSL3">[SSL3]</b></td>
+<td class="top">
+<a>Barnes, R.</a>, <a>Thomson, M.</a>, <a>Pironti, A.</a> and <a>A. Langley</a>, "<a href="https://tools.ietf.org/html/rfc7568">Deprecating Secure Sockets Layer Version 3.0</a>", RFC 7568, DOI 10.17487/RFC7568, June 2015.</td>
+</tr>
+<tr>
+<td class="reference"><b id="SUCCESS">[SUCCESS]</b></td>
+<td class="top">
+<a>Thaler, D.</a> and <a>B. Aboba</a>, "<a href="https://tools.ietf.org/html/rfc5218">What Makes for a Successful Protocol?</a>", RFC 5218, DOI 10.17487/RFC5218, July 2008.</td>
+</tr>
+<tr>
+<td class="reference"><b id="TLS">[TLS]</b></td>
+<td class="top">
+<a>Rescorla, E.</a>, "<a href="https://tools.ietf.org/html/rfc8446">The Transport Layer Security (TLS) Protocol Version 1.3</a>", RFC 8446, DOI 10.17487/RFC8446, August 2018.</td>
+</tr>
+<tr>
+<td class="reference"><b id="UNCOORDINATED">[UNCOORDINATED]</b></td>
+<td class="top">
+<a>Bryant, S.</a>, <a>Morrow, M.</a> and <a>IAB</a>, "<a href="https://tools.ietf.org/html/rfc5704">Uncoordinated Protocol Development Considered Harmful</a>", RFC 5704, DOI 10.17487/RFC5704, November 2009.</td>
+</tr>
+<tr>
+<td class="reference"><b id="USE-IT">[USE-IT]</b></td>
+<td class="top">
+<a>Thomson, M.</a>, "<a href="https://tools.ietf.org/html/draft-thomson-use-it-or-lose-it-04">Long-term Viability of Protocol Extension Mechanisms</a>", Internet-Draft draft-thomson-use-it-or-lose-it-04, July 2019.</td>
+</tr>
+</tbody></table>
+<h1 id="rfc.appendix.A">
+<a href="#rfc.appendix.A">Appendix A.</a> <a href="#acknowledgments" id="acknowledgments">Acknowledgments</a>
+</h1>
+<p id="rfc.section.A.p.1">Constructive feedback on this document has been provided by a surprising number of people including Bernard Aboba, Brian Carpenter, Stuart Cheshire, Mark Nottingham, Russ Housley, Henning Schulzrinne, Robert Sparks, Brian Trammell, and Anne Van Kesteren.  Please excuse any omission.</p>
+<h1 id="rfc.authors"><a href="#rfc.authors">Author's Address</a></h1>
+<div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Martin Thomson</span> 
+	  <span class="n hidden">
+		<span class="family-name">Thomson</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Mozilla</span>
+	<span class="adr">
+	  
+	  <span class="vcardline">
+		<span class="locality"></span> 
+		<span class="region"></span>
+		<span class="code"></span>
+	  </span>
+	  <span class="country-name vcardline"></span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:mt@lowentropy.net">mt@lowentropy.net</a></span>
+
+  </address>
+</div>
+
+</body>
+</html>
+
