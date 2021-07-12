@@ -4,8 +4,8 @@
 
 Network Working Group                                         M. Thomson
 Internet-Draft                                                   Mozilla
-Intended status: Informational                         November 05, 2019
-Expires: May 8, 2020
+Intended status: Informational                              12 July 2021
+Expires: 13 January 2022
 
 
           The Harmful Consequences of the Robustness Principle
@@ -25,10 +25,12 @@ Note to Readers
 
    Discussion of this document takes place on the Architecture-Discuss
    mailing list (architecture-discuss@ietf.org), which is archived at
-   https://mailarchive.ietf.org/arch/browse/architecture-discuss/ [1].
+   https://mailarchive.ietf.org/arch/browse/architecture-discuss/
+   (https://mailarchive.ietf.org/arch/browse/architecture-discuss/).
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/intarchboard/protocol-maintenance [2].
+   https://github.com/intarchboard/protocol-maintenance
+   (https://github.com/intarchboard/protocol-maintenance).
 
 Status of This Memo
 
@@ -45,33 +47,30 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 8, 2020.
+   This Internet-Draft will expire on 13 January 2022.
 
 
 
 
 
-
-
-Thomson                    Expires May 8, 2020                  [Page 1]
+Thomson                  Expires 13 January 2022                [Page 1]
 
-Internet-Draft            Protocol Maintenance             November 2019
+Internet-Draft            Protocol Maintenance                 July 2021
 
 
 Copyright Notice
 
-   Copyright (c) 2019 IETF Trust and the persons identified as the
+   Copyright (c) 2021 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
-   Provisions Relating to IETF Documents
-   (https://trustee.ietf.org/license-info) in effect on the date of
-   publication of this document.  Please review these documents
-   carefully, as they describe your rights and restrictions with respect
-   to this document.  Code Components extracted from this document must
-   include Simplified BSD License text as described in Section 4.e of
-   the Trust Legal Provisions and are provided without warranty as
-   described in the Simplified BSD License.
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Simplified BSD License text
+   as described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Simplified BSD License.
 
 Table of Contents
 
@@ -85,9 +84,7 @@ Table of Contents
    8.  Exclusion . . . . . . . . . . . . . . . . . . . . . . . . . .   9
    9.  Security Considerations . . . . . . . . . . . . . . . . . . .  10
    10. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  10
-   11. References  . . . . . . . . . . . . . . . . . . . . . . . . .  10
-     11.1.  Informative References . . . . . . . . . . . . . . . . .  10
-     11.2.  URIs . . . . . . . . . . . . . . . . . . . . . . . . . .  12
+   11. Informative References  . . . . . . . . . . . . . . . . . . .  10
    Appendix A.  Acknowledgments  . . . . . . . . . . . . . . . . . .  12
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  12
 
@@ -105,17 +102,17 @@ Table of Contents
 
    This simple statement captures a significant concept in the design of
    interoperable systems.  Many consider the application of the
-
-
-
-
-Thomson                    Expires May 8, 2020                  [Page 2]
-
-Internet-Draft            Protocol Maintenance             November 2019
-
-
    robustness principle to be instrumental in the success of the
    Internet as well as the design of interoperable protocols in general.
+
+
+
+
+
+Thomson                  Expires 13 January 2022                [Page 2]
+
+Internet-Draft            Protocol Maintenance                 July 2021
+
 
    Time and experience shows that negative consequences to
    interoperability accumulate over time if implementations apply the
@@ -165,9 +162,12 @@ Internet-Draft            Protocol Maintenance             November 2019
 
 
 
-Thomson                    Expires May 8, 2020                  [Page 3]
+
+
+
+Thomson                  Expires 13 January 2022                [Page 3]
 
-Internet-Draft            Protocol Maintenance             November 2019
+Internet-Draft            Protocol Maintenance                 July 2021
 
 
    An imperfect specification is natural, largely because it is more
@@ -189,10 +189,11 @@ Internet-Draft            Protocol Maintenance             November 2019
 3.  Protocol Decay
 
    The application of the robustness principle to the early Internet, or
-   any system that is in early phases of deployment, is expedient.  The
-   consequence of applying the principle is deferring the effort of
-   dealing with interoperability problems, which can amplify the
-   ultimate cost of handling those problems.
+   any system that is in early phases of deployment, is expedient.
+   Applying the principle defers the effort of dealing with
+   interoperability problems, which prioritizes progress.  However,
+   deferral can amplify the ultimate cost of handling interoperability
+   problems.
 
    Divergent implementations of a specification emerge over time.  When
    variations occur in the interpretation or expression of semantic
@@ -212,21 +213,20 @@ Internet-Draft            Protocol Maintenance             November 2019
    An implementation that reacts to variations in the manner recommended
    in the robustness principle sets up a feedback cycle.  Over time:
 
-   o  Implementations progressively add logic to constrain how data is
+   *  Implementations progressively add logic to constrain how data is
       transmitted, or to permit variations in what is received.
 
-   o  Errors in implementations or confusion about semantics are
+   *  Errors in implementations or confusion about semantics are
       permitted or ignored.
 
 
 
-
-Thomson                    Expires May 8, 2020                  [Page 4]
+Thomson                  Expires 13 January 2022                [Page 4]
 
-Internet-Draft            Protocol Maintenance             November 2019
+Internet-Draft            Protocol Maintenance                 July 2021
 
 
-   o  These errors can become entrenched, forcing other implementations
+   *  These errors can become entrenched, forcing other implementations
       to be tolerant of those errors.
 
    A flaw can become entrenched as a de facto standard.  Any
@@ -277,9 +277,9 @@ Internet-Draft            Protocol Maintenance             November 2019
 
 
 
-Thomson                    Expires May 8, 2020                  [Page 5]
+Thomson                  Expires 13 January 2022                [Page 5]
 
-Internet-Draft            Protocol Maintenance             November 2019
+Internet-Draft            Protocol Maintenance                 July 2021
 
 
    For widely used protocols, the massive scale of the Internet makes
@@ -320,25 +320,25 @@ Internet-Draft            Protocol Maintenance             November 2019
    The robustness principle can be highly effective in safeguarding
    against flaws in the implementation of a protocol by peers.
    Especially when a specification remains unchanged for an extended
-   period of time, the inclination to be tolerant accumulates over time.
-   Indeed, when faced with divergent interpretations of an immutable
-   specification, the best way for an implementation to remain
+   period of time, incentive to be tolerant of errors accumulates over
+   time.  Indeed, when faced with divergent interpretations of an
+   immutable specification, the only way for an implementation to remain
    interoperable is to be tolerant of differences in interpretation and
    implementation errors.
 
    From this perspective, application of the robustness principle to the
    implementation of a protocol specification that does not change is
-   logical, even necessary.  But that suggests that the problem is with
-   the assumption that existing specifications and implementations are
+   logical, even necessary.  But that conclusion relies on an assumption
+   that existing specifications and implementations are unable to
 
 
 
-Thomson                    Expires May 8, 2020                  [Page 6]
+Thomson                  Expires 13 January 2022                [Page 6]
 
-Internet-Draft            Protocol Maintenance             November 2019
+Internet-Draft            Protocol Maintenance                 July 2021
 
 
-   unable to change.  Applying the robustness principle in this way
+   change.  Applying the robustness principle in this way
    disproportionately values short-term gains over the negative effects
    on future implementations and the protocol as a whole.
 
@@ -370,9 +370,12 @@ Internet-Draft            Protocol Maintenance             November 2019
 
    Early implementations of protocols have a stronger obligation to
    closely follow specifications as their behavior will affect all
-   subsequent implementations.  Protocol specifications might need more
-   frequent revision during early deployments to capture feedback from
-   early rounds of deployment.
+   subsequent implementations.  In addition to specifications, later
+   implementations will be guided by what existing deployments accept.
+   Tolerance of errors in early deployments is most likely to result in
+   problems.  Protocol specifications might need more frequent revision
+   during early deployments to capture feedback from early rounds of
+   deployment.
 
    Neglect can quickly produce the negative consequences this document
    describes.  Restoring the protocol to a state where it can be
@@ -381,24 +384,24 @@ Internet-Draft            Protocol Maintenance             November 2019
    documented.  This can be difficult and time-consuming, particularly
    if the protocol has a diverse set of implementations.  Such a process
    was undertaken for HTTP [HTTP] after a period of minimal maintenance.
-   Restoring HTTP specifications to currency took significant effort.
+   Restoring HTTP specifications to relevance took significant effort.
+
+
+
+
+Thomson                  Expires 13 January 2022                [Page 7]
+
+Internet-Draft            Protocol Maintenance                 July 2021
+
 
    Maintenance is most effective if it is responsive, which is greatly
    affected by how rapidly protocol changes can be deployed.  For
    protocol deployments that operate on longer time scales, temporary
-
-
-
-Thomson                    Expires May 8, 2020                  [Page 7]
-
-Internet-Draft            Protocol Maintenance             November 2019
-
-
    workarounds following the spirit of the robustness principle might be
    necessary.  If specifications can be updated more readily than
-   deployments, details of the workaround can be document, including the
-   desired form of the protocols once the need for workarounds no longer
-   exists and plans for removing the workaround.
+   deployments, details of the workaround can be documented, including
+   the desired form of the protocols once the need for workarounds no
+   longer exists and plans for removing the workaround.
 
 6.  Extensibility
 
@@ -406,17 +409,20 @@ Internet-Draft            Protocol Maintenance             November 2019
    cases or changes in the environment in which the protocol is
    deployed.
 
-   Extensibility is sometimes mistaken for an application of the
-   robustness principle.  After all, if one party wants to start using a
-   new feature before another party is prepared to receive it, it might
-   be assumed that the receiving party is being tolerant of unexpected
-   inputs.
+   The ability to extend a protocol is sometimes mistaken for an
+   application of the robustness principle.  After all, if one party
+   wants to start using a new feature before another party is prepared
+   to receive it, it might be assumed that the receiving party is being
+   tolerant of unexpected inputs.
 
    A well-designed extensibility mechanism establishes clear rules for
-   the handling of things like new messages or parameters.  If an
-   extension mechanism is designed and implemented correctly, new
-   protocol features can be deployed with confidence in the
-   understanding of the effect they have on existing implementations.
+   the handling of things like new messages or parameters.  This depends
+   on having clear rules for the handling of malformed or illegal inputs
+   so that implementations behave consistently in all cases that might
+   affect interoperation.  If extension mechanisms and error handling
+   are designed and implemented correctly, new protocol features can be
+   deployed with confidence in the understanding of the effect they have
+   on existing implementations.
 
    In contrast, relying on implementations to consistently apply the
    robustness principle is not a good strategy for extensibility.  Using
@@ -434,7 +440,15 @@ Internet-Draft            Protocol Maintenance             November 2019
 
    A well-specified protocol includes rules for consistent handling of
    aberrant conditions.  This increases the chances that implementations
-   will have interoperable handling of unusual conditions.
+   will have consistent and interoperable handling of unusual
+   conditions.
+
+
+
+Thomson                  Expires 13 January 2022                [Page 8]
+
+Internet-Draft            Protocol Maintenance                 July 2021
+
 
    Intolerance of any deviation from specification, where
    implementations generate fatal errors in response to observing
@@ -443,16 +457,9 @@ Internet-Draft            Protocol Maintenance             November 2019
    errors for unspecified conditions instead of attempting error
    recovery can ensure that faults receive attention.
 
-
-
-Thomson                    Expires May 8, 2020                  [Page 8]
-
-Internet-Draft            Protocol Maintenance             November 2019
-
-
    This improves feedback for new implementations in particular.  When a
-   new implementation encounters an intolerant implementation, it
-   receives strong feedback that allows problems to be discovered
+   new implementation encounters a peer that is intolerant of an error,
+   it receives strong feedback that allows the problem to be discovered
    quickly.
 
    To be effective, intolerant implementations need to be sufficiently
@@ -460,9 +467,16 @@ Internet-Draft            Protocol Maintenance             November 2019
    high probability.  This could depend on multiple implementations
    deploying strict checks.
 
+   This does not mean that intolerance of errors in early deployments of
+   protocols have the effect of preventing interoperability.  On the
+   contrary, when existing implementations follow clearly specified
+   error handling, new implementations or features can be introduced
+   more readily as the effect on existing implementations can be easily
+   predicted; see also Section 6.
+
    Any intolerance also needs to be strongly supported by
    specifications, otherwise they encourage fracturing of the protocol
-   community or proliferation of workarounds (see Section 8).
+   community or proliferation of workarounds; see Section 8.
 
    Intolerance can be used to motivate compliance with any protocol
    requirement.  For instance, the INADEQUATE_SECURITY error code and
@@ -485,26 +499,22 @@ Internet-Draft            Protocol Maintenance             November 2019
    care, but changes to a protocol should not be blocked on the grounds
    of the risk of exclusion alone.
 
+
+
+Thomson                  Expires 13 January 2022                [Page 9]
+
+Internet-Draft            Protocol Maintenance                 July 2021
+
+
    Exclusion is a direct goal when choosing to be intolerant of errors
-   (see Section 7), which is deployed with the intent of protecting
-   future interoperability.
+   (see Section 7).  Exclusionary actions are employed with the
+   deliberate intent of protecting future interoperability.
 
    Excluding implementations or deployments can lead to a fracturing of
    the protocol system that could be more harmful than any divergence
    resulting from following the robustness principle.  RFC 5704
    [UNCOORDINATED] describes how conflict or competition in the
    maintenance of protocols can lead to similar problems.
-
-
-
-
-
-
-
-Thomson                    Expires May 8, 2020                  [Page 9]
-
-Internet-Draft            Protocol Maintenance             November 2019
-
 
 9.  Security Considerations
 
@@ -525,9 +535,7 @@ Internet-Draft            Protocol Maintenance             November 2019
 
    This document has no IANA actions.
 
-11.  References
-
-11.1.  Informative References
+11.  Informative References
 
    [ECMA262]  "ECMAScript(R) 2018 Language Specification", ECMA-262 9th
               Edition, June 2018, <https://www.ecma-
@@ -538,13 +546,21 @@ Internet-Draft            Protocol Maintenance             November 2019
               DOI 10.17487/RFC6709, September 2012,
               <https://www.rfc-editor.org/info/rfc6709>.
 
-   [HTML]     "HTML", WHATWG Living Standard, March 2019,
+   [HTML]     "HTML", WHATWG Living Standard, 8 March 2019,
               <https://html.spec.whatwg.org/>.
 
    [HTTP]     Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
               Protocol (HTTP/1.1): Message Syntax and Routing",
               RFC 7230, DOI 10.17487/RFC7230, June 2014,
               <https://www.rfc-editor.org/info/rfc7230>.
+
+
+
+
+Thomson                  Expires 13 January 2022               [Page 10]
+
+Internet-Draft            Protocol Maintenance                 July 2021
+
 
    [HTTP2]    Belshe, M., Peon, R., and M. Thomson, Ed., "Hypertext
               Transfer Protocol Version 2 (HTTP/2)", RFC 7540,
@@ -555,13 +571,6 @@ Internet-Draft            Protocol Maintenance             November 2019
               DOI 10.17487/RFC7493, March 2015,
               <https://www.rfc-editor.org/info/rfc7493>.
 
-
-
-Thomson                    Expires May 8, 2020                 [Page 10]
-
-Internet-Draft            Protocol Maintenance             November 2019
-
-
    [IP]       Postel, J., "DoD standard Internet Protocol", RFC 760,
               DOI 10.17487/RFC0760, January 1980,
               <https://www.rfc-editor.org/info/rfc760>.
@@ -571,8 +580,7 @@ Internet-Draft            Protocol Maintenance             November 2019
               DOI 10.17487/RFC4627, July 2006,
               <https://www.rfc-editor.org/info/rfc4627>.
 
-   [JSON-BIS]
-              Bray, T., Ed., "The JavaScript Object Notation (JSON) Data
+   [JSON-BIS] Bray, T., Ed., "The JavaScript Object Notation (JSON) Data
               Interchange Format", RFC 7159, DOI 10.17487/RFC7159, March
               2014, <https://www.rfc-editor.org/info/rfc7159>.
 
@@ -599,6 +607,17 @@ Internet-Draft            Protocol Maintenance             November 2019
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
               <https://www.rfc-editor.org/info/rfc8446>.
 
+
+
+
+
+
+
+Thomson                  Expires 13 January 2022               [Page 11]
+
+Internet-Draft            Protocol Maintenance                 July 2021
+
+
    [UNCOORDINATED]
               Bryant, S., Ed., Morrow, M., Ed., and IAB, "Uncoordinated
               Protocol Development Considered Harmful", RFC 5704,
@@ -606,23 +625,10 @@ Internet-Draft            Protocol Maintenance             November 2019
               <https://www.rfc-editor.org/info/rfc5704>.
 
    [USE-IT]   Thomson, M., "Long-term Viability of Protocol Extension
-              Mechanisms", draft-thomson-use-it-or-lose-it-04 (work in
-              progress), July 2019.
-
-
-
-
-
-Thomson                    Expires May 8, 2020                 [Page 11]
-
-Internet-Draft            Protocol Maintenance             November 2019
-
-
-11.2.  URIs
-
-   [1] https://mailarchive.ietf.org/arch/browse/architecture-discuss/
-
-   [2] https://github.com/intarchboard/protocol-maintenance
+              Mechanisms", Work in Progress, Internet-Draft, draft-iab-
+              use-it-or-lose-it-00, 7 August 2019,
+              <https://www.ietf.org/archive/id/draft-iab-use-it-or-lose-
+              it-00.txt>.
 
 Appendix A.  Acknowledgments
 
@@ -663,10 +669,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-Thomson                    Expires May 8, 2020                 [Page 12]
+Thomson                  Expires 13 January 2022               [Page 12]
