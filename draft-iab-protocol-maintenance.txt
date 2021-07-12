@@ -49,15 +49,6 @@ Status of This Memo
 
    This Internet-Draft will expire on 13 January 2022.
 
-
-
-
-
-Thomson                  Expires 13 January 2022                [Page 1]
-
-Internet-Draft            Protocol Maintenance                 July 2021
-
-
 Copyright Notice
 
    Copyright (c) 2021 IETF Trust and the persons identified as the
@@ -74,19 +65,19 @@ Copyright Notice
 
 Table of Contents
 
-   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-   2.  Fallibility of Specifications . . . . . . . . . . . . . . . .   3
-   3.  Protocol Decay  . . . . . . . . . . . . . . . . . . . . . . .   4
-   4.  Ecosystem Effects . . . . . . . . . . . . . . . . . . . . . .   5
-   5.  Active Protocol Maintenance . . . . . . . . . . . . . . . . .   6
-   6.  Extensibility . . . . . . . . . . . . . . . . . . . . . . . .   8
-   7.  Virtuous Intolerance  . . . . . . . . . . . . . . . . . . . .   8
-   8.  Exclusion . . . . . . . . . . . . . . . . . . . . . . . . . .   9
-   9.  Security Considerations . . . . . . . . . . . . . . . . . . .  10
-   10. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  10
-   11. Informative References  . . . . . . . . . . . . . . . . . . .  10
-   Appendix A.  Acknowledgments  . . . . . . . . . . . . . . . . . .  12
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  12
+   1.  Introduction
+   2.  Fallibility of Specifications
+   3.  Protocol Decay
+   4.  Ecosystem Effects
+   5.  Active Protocol Maintenance
+   6.  Extensibility
+   7.  Virtuous Intolerance
+   8.  Exclusion
+   9.  Security Considerations
+   10. IANA Considerations
+   11. Informative References
+   Appendix A.  Acknowledgments
+   Author's Address
 
 1.  Introduction
 
@@ -104,15 +95,6 @@ Table of Contents
    interoperable systems.  Many consider the application of the
    robustness principle to be instrumental in the success of the
    Internet as well as the design of interoperable protocols in general.
-
-
-
-
-
-Thomson                  Expires 13 January 2022                [Page 2]
-
-Internet-Draft            Protocol Maintenance                 July 2021
-
 
    Time and experience shows that negative consequences to
    interoperability accumulate over time if implementations apply the
@@ -159,16 +141,6 @@ Internet-Draft            Protocol Maintenance                 July 2021
    This formulation of the principle expressly recognizes the
    possibility that the specification could be imperfect.  This
    contextualizes the principle in an important way.
-
-
-
-
-
-
-Thomson                  Expires 13 January 2022                [Page 3]
-
-Internet-Draft            Protocol Maintenance                 July 2021
-
 
    An imperfect specification is natural, largely because it is more
    important to proceed to implementation and deployment than it is to
@@ -219,13 +191,6 @@ Internet-Draft            Protocol Maintenance                 July 2021
    *  Errors in implementations or confusion about semantics are
       permitted or ignored.
 
-
-
-Thomson                  Expires 13 January 2022                [Page 4]
-
-Internet-Draft            Protocol Maintenance                 July 2021
-
-
    *  These errors can become entrenched, forcing other implementations
       to be tolerant of those errors.
 
@@ -275,13 +240,6 @@ Internet-Draft            Protocol Maintenance                 July 2021
    implementations, but implementations ultimately need to interoperate
    with deployed implementations.
 
-
-
-Thomson                  Expires 13 January 2022                [Page 5]
-
-Internet-Draft            Protocol Maintenance                 July 2021
-
-
    For widely used protocols, the massive scale of the Internet makes
    large-scale interoperability testing infeasible for all but a
    privileged few.  The cost of building a new implementation using
@@ -330,14 +288,6 @@ Internet-Draft            Protocol Maintenance                 July 2021
    implementation of a protocol specification that does not change is
    logical, even necessary.  But that conclusion relies on an assumption
    that existing specifications and implementations are unable to
-
-
-
-Thomson                  Expires 13 January 2022                [Page 6]
-
-Internet-Draft            Protocol Maintenance                 July 2021
-
-
    change.  Applying the robustness principle in this way
    disproportionately values short-term gains over the negative effects
    on future implementations and the protocol as a whole.
@@ -385,14 +335,6 @@ Internet-Draft            Protocol Maintenance                 July 2021
    if the protocol has a diverse set of implementations.  Such a process
    was undertaken for HTTP [HTTP] after a period of minimal maintenance.
    Restoring HTTP specifications to relevance took significant effort.
-
-
-
-
-Thomson                  Expires 13 January 2022                [Page 7]
-
-Internet-Draft            Protocol Maintenance                 July 2021
-
 
    Maintenance is most effective if it is responsive, which is greatly
    affected by how rapidly protocol changes can be deployed.  For
@@ -443,13 +385,6 @@ Internet-Draft            Protocol Maintenance                 July 2021
    will have consistent and interoperable handling of unusual
    conditions.
 
-
-
-Thomson                  Expires 13 January 2022                [Page 8]
-
-Internet-Draft            Protocol Maintenance                 July 2021
-
-
    Intolerance of any deviation from specification, where
    implementations generate fatal errors in response to observing
    undefined or unusual behaviour, can be harnessed to reduce
@@ -499,13 +434,6 @@ Internet-Draft            Protocol Maintenance                 July 2021
    care, but changes to a protocol should not be blocked on the grounds
    of the risk of exclusion alone.
 
-
-
-Thomson                  Expires 13 January 2022                [Page 9]
-
-Internet-Draft            Protocol Maintenance                 July 2021
-
-
    Exclusion is a direct goal when choosing to be intolerant of errors
    (see Section 7).  Exclusionary actions are employed with the
    deliberate intent of protecting future interoperability.
@@ -544,7 +472,7 @@ Internet-Draft            Protocol Maintenance                 July 2021
    [EXT]      Carpenter, B., Aboba, B., Ed., and S. Cheshire, "Design
               Considerations for Protocol Extensions", RFC 6709,
               DOI 10.17487/RFC6709, September 2012,
-              <https://www.rfc-editor.org/info/rfc6709>.
+              <https://datatracker.ietf.org/doc/html/rfc6709>.
 
    [HTML]     "HTML", WHATWG Living Standard, 8 March 2019,
               <https://html.spec.whatwg.org/>.
@@ -552,83 +480,64 @@ Internet-Draft            Protocol Maintenance                 July 2021
    [HTTP]     Fielding, R., Ed. and J. Reschke, Ed., "Hypertext Transfer
               Protocol (HTTP/1.1): Message Syntax and Routing",
               RFC 7230, DOI 10.17487/RFC7230, June 2014,
-              <https://www.rfc-editor.org/info/rfc7230>.
-
-
-
-
-Thomson                  Expires 13 January 2022               [Page 10]
-
-Internet-Draft            Protocol Maintenance                 July 2021
-
+              <https://datatracker.ietf.org/doc/html/rfc7230>.
 
    [HTTP2]    Belshe, M., Peon, R., and M. Thomson, Ed., "Hypertext
               Transfer Protocol Version 2 (HTTP/2)", RFC 7540,
               DOI 10.17487/RFC7540, May 2015,
-              <https://www.rfc-editor.org/info/rfc7540>.
+              <https://datatracker.ietf.org/doc/html/rfc7540>.
 
    [I-JSON]   Bray, T., Ed., "The I-JSON Message Format", RFC 7493,
               DOI 10.17487/RFC7493, March 2015,
-              <https://www.rfc-editor.org/info/rfc7493>.
+              <https://datatracker.ietf.org/doc/html/rfc7493>.
 
    [IP]       Postel, J., "DoD standard Internet Protocol", RFC 760,
               DOI 10.17487/RFC0760, January 1980,
-              <https://www.rfc-editor.org/info/rfc760>.
+              <https://datatracker.ietf.org/doc/html/rfc760>.
 
    [JSON]     Crockford, D., "The application/json Media Type for
               JavaScript Object Notation (JSON)", RFC 4627,
               DOI 10.17487/RFC4627, July 2006,
-              <https://www.rfc-editor.org/info/rfc4627>.
+              <https://datatracker.ietf.org/doc/html/rfc4627>.
 
    [JSON-BIS] Bray, T., Ed., "The JavaScript Object Notation (JSON) Data
               Interchange Format", RFC 7159, DOI 10.17487/RFC7159, March
-              2014, <https://www.rfc-editor.org/info/rfc7159>.
+              2014, <https://datatracker.ietf.org/doc/html/rfc7159>.
 
    [MD5]      Turner, S. and L. Chen, "Updated Security Considerations
               for the MD5 Message-Digest and the HMAC-MD5 Algorithms",
               RFC 6151, DOI 10.17487/RFC6151, March 2011,
-              <https://www.rfc-editor.org/info/rfc6151>.
+              <https://datatracker.ietf.org/doc/html/rfc6151>.
 
    [PRINCIPLES]
               Carpenter, B., Ed., "Architectural Principles of the
               Internet", RFC 1958, DOI 10.17487/RFC1958, June 1996,
-              <https://www.rfc-editor.org/info/rfc1958>.
+              <https://datatracker.ietf.org/doc/html/rfc1958>.
 
    [SSL3]     Barnes, R., Thomson, M., Pironti, A., and A. Langley,
               "Deprecating Secure Sockets Layer Version 3.0", RFC 7568,
               DOI 10.17487/RFC7568, June 2015,
-              <https://www.rfc-editor.org/info/rfc7568>.
+              <https://datatracker.ietf.org/doc/html/rfc7568>.
 
    [SUCCESS]  Thaler, D. and B. Aboba, "What Makes for a Successful
               Protocol?", RFC 5218, DOI 10.17487/RFC5218, July 2008,
-              <https://www.rfc-editor.org/info/rfc5218>.
+              <https://datatracker.ietf.org/doc/html/rfc5218>.
 
    [TLS]      Rescorla, E., "The Transport Layer Security (TLS) Protocol
               Version 1.3", RFC 8446, DOI 10.17487/RFC8446, August 2018,
-              <https://www.rfc-editor.org/info/rfc8446>.
-
-
-
-
-
-
-
-Thomson                  Expires 13 January 2022               [Page 11]
-
-Internet-Draft            Protocol Maintenance                 July 2021
-
+              <https://datatracker.ietf.org/doc/html/rfc8446>.
 
    [UNCOORDINATED]
               Bryant, S., Ed., Morrow, M., Ed., and IAB, "Uncoordinated
               Protocol Development Considered Harmful", RFC 5704,
               DOI 10.17487/RFC5704, November 2009,
-              <https://www.rfc-editor.org/info/rfc5704>.
+              <https://datatracker.ietf.org/doc/html/rfc5704>.
 
    [USE-IT]   Thomson, M., "Long-term Viability of Protocol Extension
               Mechanisms", Work in Progress, Internet-Draft, draft-iab-
               use-it-or-lose-it-00, 7 August 2019,
-              <https://www.ietf.org/archive/id/draft-iab-use-it-or-lose-
-              it-00.txt>.
+              <https://datatracker.ietf.org/doc/html/draft-iab-use-it-
+              or-lose-it-00>.
 
 Appendix A.  Acknowledgments
 
@@ -644,29 +553,3 @@ Author's Address
    Mozilla
 
    Email: mt@lowentropy.net
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Thomson                  Expires 13 January 2022               [Page 12]
